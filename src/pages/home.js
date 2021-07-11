@@ -32,7 +32,7 @@ export default function Home() {
         />
       </div>
       <div>
-      <button type="button" class="btn btn-outline-primary">Primary</button>
+      <button type="button" className="btn btn-outline-primary">Primary</button>
       </div>
     </form>
     </Box>
