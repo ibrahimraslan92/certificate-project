@@ -1,7 +1,6 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://ibrahimraslan92.github.io/certificate-project/",
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^2.6.0",
