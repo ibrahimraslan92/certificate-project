@@ -10,8 +10,6 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.css";
-import "./pages/cert.css";
 
 export default function App() {
   return (

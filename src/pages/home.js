@@ -2,6 +2,7 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -32,7 +33,9 @@ export default function Home() {
         />
       </div>
       <div>
-      <button type="button" className="btn btn-outline-primary">Primary</button>
+      <Button variant="contained" color="primary">
+          submit
+      </Button>
       </div>
     </form>
     </Box>

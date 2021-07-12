@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { Viewer } from '@react-pdf-viewer/core'; 
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'; 
 import { Worker } from '@react-pdf-viewer/core'; 
+import TextField from '@material-ui/core/TextField';
 // Import the styles
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+import { Box , Button } from '@material-ui/core';
+
 
 
 export default function Certe  ()  {
@@ -54,34 +57,43 @@ export default function Certe  ()  {
   }
 
   return (
-    <div className='container'>
-
+    <Box bgcolor="#ca6060">
+    <div>
     <br></br>
-    
-      <form className='form-group' onSubmit={handlePdfFileSubmit}>
-        <input type="file" className='form-control'
-          required onChange={handlePdfFileChange}
+      <Box display="flex" justifyContent="center" m={1} p={1}  bgcolor="#ca6060" >
+            <form  onSubmit={handlePdfFileSubmit}>
+            <TextField
+              variant="outlined"
+              type="file"
+              required onChange={handlePdfFileChange}
         />
-        {pdfFileError&&<div className='error-msg'>{pdfFileError}</div>}
+        {pdfFileError&&<div>{pdfFileError}</div>}
         <br></br>
-        <button type="submit" className='btn btn-success btn-lg'>
-          UPLOAD
-        </button>
-      </form>
-      <br></br>
-      <h4>View PDF</h4>
-      <div className='pdf-container'>
-        {/* show pdf conditionally (if we have one)  */}
-        {viewPdf&&<><Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
-          <Viewer fileUrl={viewPdf}
-            plugins={[defaultLayoutPluginInstance]} />
-      </Worker></>}
+              <button type="submit" >
+                UPLOAD
+              </button>
+             </form>
+      </Box>
+        <Box display="flex" justifyContent="center" m={1} p={1}  bgcolor="#ca6060" > 
+            <br></br>
+            <h4>View PDF</h4>
+        </Box>
+          <Box>
+            <div >
+              {/* show pdf conditionally (if we have one)  */}
+              {viewPdf&&<><Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
+                <Viewer fileUrl={viewPdf}
+                  plugins={[defaultLayoutPluginInstance]} />
+              </Worker></>}
 
-      {/* if we dont have pdf or viewPdf state is null */}
-      {!viewPdf&&<>No pdf file selected</>}
-      </div>
+              {/* if we dont have pdf or viewPdf state is null */}
+              {!viewPdf&&<>No pdf file selected</>}
+            </div>
+          </Box>
+      
 
     </div>
+    </Box>
   )
 }
 
