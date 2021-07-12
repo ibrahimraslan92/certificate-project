@@ -1,5 +1,5 @@
 import React from "react";
-import Home from "./pages/home";
+import Upload from "./pages/upload";
 import Admin from "./pages/admin";
 import Cert from "./pages/cert";
 import Login from "./pages/login";
@@ -19,7 +19,7 @@ export default function App() {
         <Route exact component={Cert} path="/cert" />
         <Route exact component={Login} path="/login" />
         <Route exact component={Validate} path="/validate" />
-        <Route exact component={Home} path="/" />
+        <Route exact component={Upload} path="/upload" />
         <Redirect to="/" />
       </Switch>
     </Router>
